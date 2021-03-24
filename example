@@ -1,0 +1,14 @@
+$(document).on('keypress dpkeydown', 'input,select,textarea', function (e) {
+                    if (e.which == 13) {
+                        e.preventDefault();
+                        var $canfocus = $(':focusable');
+                        var index = $canfocus.index(document.activeElement) + 1;
+                        if ($canfocus.eq(index).attr('tabindex') == -1)
+                            index++;
+                        if (index >= $canfocus.length)
+                            index = 0;
+                        $canfocus.eq(index).focus();
+                    }
+                });
+                
+#DAy 9 #100DaysofCode
